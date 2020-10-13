@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "esm": "^3.2.25",
     "fastify": "^1.14.1"
   }
 }

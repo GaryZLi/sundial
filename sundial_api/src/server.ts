@@ -64,6 +64,8 @@ async function sendWebhooks(webhookURL: string, call: Call): Promise<void> {
     const prefix = `POST ${webhookURL} (id=${call.id} status=${status})`
     await setTimeoutPromise(delay)
 
+
+
     let response
     try {
       response = await axios.post(webhookURL, { id: call.id, status })
@@ -72,7 +74,8 @@ async function sendWebhooks(webhookURL: string, call: Call): Promise<void> {
       continue
     }
 
-    console.log(`${prefix} - received response code=${response.status}`)
+
+    console.log(`${prefix} - received response code=${response.status} -x-x-x`)
   }
 }
 
@@ -98,7 +101,7 @@ function makeStatusDelays(phone: string): StatusDelay[] {
 }
 
 function newStatusDelay(status: Status): StatusDelay {
-  return { status, delay: Math.random() * 5000 }
+  return { status, delay: 0 }
 }
 
 function isValidURL(url: string): boolean {

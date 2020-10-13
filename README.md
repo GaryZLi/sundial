@@ -1,3 +1,6 @@
+### INITIAL
+Please have API server running first.
+
 ### INSTALLATION
 ```sh
 yarn install

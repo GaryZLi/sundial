@@ -37,13 +37,10 @@ async function start(): Promise<void> {
   let nextID = 1
 
   server.get("/", async () => {
-    console.log('easd')
     return `The API server only supports POST requests to ${CALL_PATH}\n`
   })
 
   server.post(CALL_PATH, async request => {
-    console.log('hea')
-
     const { phone, webhookURL } = request.body
     if (typeof phone !== "string" || !VALID_PHONES.has(phone)) {
       return { error: "Expected a valid phone" }
